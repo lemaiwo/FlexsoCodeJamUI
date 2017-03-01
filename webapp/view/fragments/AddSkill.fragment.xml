@@ -1,0 +1,33 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<Dialog title="Add Skill" showHeader="true">
+		<content>
+			<f:Form id="skillform" minWidth="1024" maxContainerCols="2" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1"/>
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Skill">
+								<f:fields>
+									<Select forceSelection="false" selectedKey="{SkillId}" items="{/SkillDetails}">
+										<core:Item key="{id}" text="{Name}"/>
+									</Select>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Score">
+								<f:fields>
+									<Input type="Number" class="sapUiSmallMarginBottom" placeholder="Enter a Number ..." value="{Score}"/>
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</content>
+		<buttons>
+			<Button icon="sap-icon://add" press="addSkill"></Button>
+			<Button icon="sap-icon://decline" press="onClose"></Button>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
